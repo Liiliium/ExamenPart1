@@ -124,6 +124,7 @@ var altura float32
 
 //Funcion principal main
 func main() {
+	s := sexo
 	p := new(Persona)
 	fmt.Println("Examen parte 1")
 	fmt.Println("Favor de llenar el siguiente cuestionario")
@@ -133,12 +134,12 @@ func main() {
 	fmt.Scanf("%d\n", &edad)
 	NSS = p.generarNSS(8)
 	fmt.Println("Ingresar sexo (H/M)")
-	fmt.Scanf("%s\n", sexo)
+	fmt.Scanf("%s\n", &s)
 	fmt.Println("Ingresar peso")
 	fmt.Scanf("%g\n", &peso)
 	fmt.Println("Ingresar altura")
 	fmt.Scanf("%g\n", &altura)
-	p.Init(nombre, edad, NSS, sexo, peso, altura)
+	p.Init(nombre, edad, NSS, s, peso, altura)
 	fmt.Println("El Sexo introducido es correcto? ", p.comprobarSexo(p.Sexo))
 	imc := p.calcularIMC(p.Peso, p.Altura, p.Sexo)
 	Imc(imc)
